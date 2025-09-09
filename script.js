@@ -44,13 +44,13 @@ class WheelGame {
         // Normalize et (0-360 arası)
         const normalizedRotation = ((rotation % 360) + 360) % 360;
         
-        // Her bölüm 45 derece (360/8 = 45)
-        const sectionAngle = 45;
+        // Her bölüm 36 derece (360/10 = 36)
+        const sectionAngle = 36;
         const sectionIndex = Math.floor(normalizedRotation / sectionAngle);
         
         // Bölümleri al
         const sections = document.querySelectorAll('.wheel-section');
-        const winningSection = sections[7 - sectionIndex]; // Ters sırada hesapla
+        const winningSection = sections[9 - sectionIndex]; // Ters sırada hesapla (10 bölüm için 9'dan başla)
         const prize = winningSection.getAttribute('data-prize');
         
         this.showResult(prize);
@@ -178,6 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     setTimeout(() => {
         const result = document.getElementById('result');
-        result.innerHTML = '🎯 Çarkı çevir ve şansını dene! 🎯';
+        result.innerHTML = '🌍 Çarkı çevir ve hayalindeki tura çık! 🌍';
     }, 1000);
 });

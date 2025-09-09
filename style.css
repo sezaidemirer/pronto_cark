@@ -64,20 +64,22 @@ p {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Her bölüm için farklı renkler */
+/* Her bölüm için farklı renkler - 10 bölüm (36 derece aralıklarla) */
 .wheel-section:nth-child(1) { background: #ff6b6b; transform: rotate(0deg); }
-.wheel-section:nth-child(2) { background: #4ecdc4; transform: rotate(45deg); }
-.wheel-section:nth-child(3) { background: #45b7d1; transform: rotate(90deg); }
-.wheel-section:nth-child(4) { background: #96ceb4; transform: rotate(135deg); }
-.wheel-section:nth-child(5) { background: #feca57; transform: rotate(180deg); }
-.wheel-section:nth-child(6) { background: #ff9ff3; transform: rotate(225deg); }
-.wheel-section:nth-child(7) { background: #54a0ff; transform: rotate(270deg); }
-.wheel-section:nth-child(8) { background: #5f27cd; transform: rotate(315deg); }
+.wheel-section:nth-child(2) { background: #4ecdc4; transform: rotate(36deg); }
+.wheel-section:nth-child(3) { background: #45b7d1; transform: rotate(72deg); }
+.wheel-section:nth-child(4) { background: #96ceb4; transform: rotate(108deg); }
+.wheel-section:nth-child(5) { background: #feca57; transform: rotate(144deg); }
+.wheel-section:nth-child(6) { background: #ff9ff3; transform: rotate(180deg); }
+.wheel-section:nth-child(7) { background: #54a0ff; transform: rotate(216deg); }
+.wheel-section:nth-child(8) { background: #5f27cd; transform: rotate(252deg); }
+.wheel-section:nth-child(9) { background: #ff4757; transform: rotate(288deg); }
+.wheel-section:nth-child(10) { background: #2ed573; transform: rotate(324deg); }
 
 .wheel-center {
     position: absolute;
