@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,101 +16,130 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: #e3f2fd;
     padding: 30px;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 90%;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.logo-container {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-p {
-    font-size: 1.2em;
+.logo {
+    max-width: 150px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.promo-text {
+    text-align: center;
     margin-bottom: 30px;
-    opacity: 0.9;
+}
+
+.promo-text h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-shadow: none;
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+.promo-text h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-shadow: none;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.promo-text p {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    color: #000000;
+    opacity: 1;
+    text-shadow: none;
 }
 
 .wheel-container {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 380px;
     margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: transparent;
+    text-align: center;
 }
 
 .wheel {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    border: 8px solid #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
-}
-
-.wheel-section {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    transform-origin: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 16px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    line-height: 1.2;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Her bölüm için farklı renkler - 8 bölüm (45 derece aralıklarla) */
-.wheel-section:nth-child(1) { background: #ff6b6b; transform: rotate(0deg); }
-.wheel-section:nth-child(2) { background: #4ecdc4; transform: rotate(45deg); }
-.wheel-section:nth-child(3) { background: #45b7d1; transform: rotate(90deg); }
-.wheel-section:nth-child(4) { background: #96ceb4; transform: rotate(135deg); }
-.wheel-section:nth-child(5) { background: #feca57; transform: rotate(180deg); }
-.wheel-section:nth-child(6) { background: #ff9ff3; transform: rotate(225deg); }
-.wheel-section:nth-child(7) { background: #54a0ff; transform: rotate(270deg); }
-.wheel-section:nth-child(8) { background: #5f27cd; transform: rotate(315deg); }
-
-.wheel-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    cursor: pointer;
+    object-fit: cover;
+    transform-origin: center center;
+    display: block;
+    margin: 0 auto;
 }
 
 .wheel-pointer {
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 30px solid #ff4757;
     position: absolute;
-    top: -25px;
+    top: 3px;
     left: 50%;
     transform: translateX(-50%);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 32px solid #ff4757;
+    z-index: 10;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
 }
 
+/* Sol mavi alandaki kadın görseli */
+.side-illustration {
+    position: fixed;
+    left: calc(2% - 15px); /* Ek 10px sola alındı */
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: clamp(330px, 39vw, 630px); /* %50 büyütüldü */
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    filter: none;
+    background: transparent;
+}
+
+/* Sağ mavi alandaki erkek görseli */
+.side-illustration-right {
+    position: fixed;
+    right: calc(2% - 50px);
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: clamp(330px, 39vw, 630px); /* %50 büyütüldü */
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    filter: none;
+    background: transparent;
+}
+
+@media (max-width: 900px) {
+    .side-illustration { display: none; }
+    .side-illustration-right { display: none; }
+}
+
+
 .spin-button {
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    background: #1e3c72;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -119,13 +148,13 @@ p {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
     margin-bottom: 20px;
 }
 
 .spin-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    box-shadow: 0 6px 20px rgba(30, 60, 114, 0.6);
 }
 
 .spin-button:active {
@@ -144,42 +173,16 @@ p {
     font-weight: bold;
     margin: 20px 0;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(30, 60, 114, 0.1);
     border-radius: 10px;
     min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #1e3c72;
+    text-shadow: none;
 }
 
-.prize-history {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.prize-history h3 {
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.prize-history ul {
-    list-style: none;
-    max-height: 150px;
-    overflow-y: auto;
-}
-
-.prize-history li {
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-.prize-history li:last-child {
-    border-bottom: none;
-}
 
 /* Responsive tasarım */
 @media (max-width: 600px) {
@@ -189,15 +192,274 @@ p {
     }
     
     .wheel-container {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
     }
     
-    .wheel-section {
-        font-size: 14px;
+    .wheel-pointer {
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 28px solid #ff4757;
     }
     
-    h1 {
-        font-size: 2em;
+    .logo {
+        max-width: 100px;
+    }
+    
+    .promo-text h1 {
+        font-size: 1.8em;
+    }
+    
+    .promo-text h2 {
+        font-size: 1.2em;
+    }
+    
+    .promo-text p {
+        font-size: 1em;
+    }
+}
+
+/* %50 İndirim rozetleri */
+.left-discount,
+.right-discount {
+    position: fixed;
+    bottom: 6%;
+    max-width: clamp(240px, 24vw, 360px);
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%) scale(1.38); /* ~%5 daha küçültüldü */
+    transform-origin: center center; /* merkez sabit */
+    will-change: transform;
+}
+
+/* Sol rozet için 50px sola kaydırma */
+.left-discount { margin-left: -50px; }
+
+/* Sağ rozet için 35px sağa kaydırma */
+.right-discount { margin-left: 35px; }
+
+@media (max-width: 900px) {
+    .left-discount, .right-discount { display: none; }
+}
+
+/* Kişi görselleri üzerinde logo (logo2) */
+.left-overlay-logo,
+.right-overlay-logo {
+    position: fixed;
+    top: 0; /* JS ayarlayacak */
+    left: 50%; /* JS ayarlayacak */
+    max-width: clamp(100px, 10vw, 160px);
+    height: auto;
+    z-index: 4;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 900px) {
+    .left-overlay-logo, .right-overlay-logo { display: none; }
+}
+
+/* Sonuç Modal */
+.result-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.result-modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s ease-out;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.prize-info {
+    margin-bottom: 30px;
+}
+
+.prize-info h3 {
+    color: #1e3c72;
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.prize-info p {
+    color: #666;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.discount-code {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid #1e3c72;
+}
+
+.discount-code h4 {
+    color: #1e3c72;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.code-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.full-code {
+    background: #1e3c72;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);
+    border: 2px solid #2a5298;
+}
+
+.copy-btn {
+    background: #2ed573;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.copy-btn:hover {
+    background: #26c965;
+    transform: translateY(-2px);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.code-info {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive modal */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.5em;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .prize-info h3 {
+        font-size: 1.6em;
+    }
+    
+    .code-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .full-code, .copy-btn {
+        width: 100%;
+        text-align: center;
     }
 }

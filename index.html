@@ -8,32 +8,53 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌍 Tur Çarkı 🌍</h1>
-        <p>Çarkı çevir ve hayalindeki tura çık!</p>
+        <img src="kadin.png?v=2" alt="Pronto misafir" class="side-illustration">
+        <img src="erkek.png?v=2" alt="Pronto misafir" class="side-illustration-right">
+        <img src="50indirim.webp?v=1" alt="%50 indirim" class="left-discount">
+        <img src="50indirim.webp?v=1" alt="%50 indirim" class="right-discount">
+        <img src="logo2.png?v=1" alt="Pronto logo" class="left-overlay-logo">
+        <img src="logo2.png?v=1" alt="Pronto logo" class="right-overlay-logo">
+        <div class="logo-container">
+            <img src="logo.png?v=2" alt="Pronto Tour" class="logo">
+        </div>
+        <div class="promo-text">
+            <h1>Pronto Fırsat Çarkı</h1>
+            <h2>%50 İndirim Her Tur'da Seni Bekliyor!</h2>
+            <p>Çarkı çevir ve hayalindeki tura çık!</p>
+        </div>
         
         <div class="wheel-container">
-            <div class="wheel" id="wheel">
-                <div class="wheel-section" data-prize="İtalya Turu">🇮🇹<br>İtalya</div>
-                <div class="wheel-section" data-prize="Fransa Turu">🇫🇷<br>Fransa</div>
-                <div class="wheel-section" data-prize="Almanya Turu">🇩🇪<br>Almanya</div>
-                <div class="wheel-section" data-prize="Lapland Turu">❄️<br>Lapland</div>
-                <div class="wheel-section" data-prize="Mısır Turu">🇪🇬<br>Mısır</div>
-                <div class="wheel-section" data-prize="Balkan Turu">🏔️<br>Balkan</div>
-                <div class="wheel-section" data-prize="G.A.P Turu">🌍<br>G.A.P</div>
-                <div class="wheel-section" data-prize="Uzakdoğu Turu">🏮<br>Uzakdoğu</div>
-            </div>
-            <div class="wheel-center">
-                <div class="wheel-pointer"></div>
-            </div>
+            <!-- Hazır PNG Çark -->
+            <img src="wheel.webp" alt="Tur Çarkı" class="wheel" id="wheel">
+            
+            <!-- Ok işareti -->
+            <div class="wheel-pointer"></div>
         </div>
         
         <button class="spin-button" id="spinButton">ÇARKI ÇEVİR!</button>
-        
-        <div class="result" id="result"></div>
-        
-        <div class="prize-history">
-            <h3>Kazandığın Ödüller:</h3>
-            <ul id="prizeList"></ul>
+    </div>
+    
+    <!-- Sonuç Modal -->
+    <div class="result-modal" id="resultModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎉 Tebrikler! 🎉</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="prize-info">
+                    <h3 id="prizeName">İtalya Turu</h3>
+                    <p>kazandınız!</p>
+                </div>
+                <div class="discount-code">
+                    <h4>🎫 İndirim Kodunuz:</h4>
+                    <div class="code-container">
+                        <div class="full-code" id="fullDiscountCode">PRONTO123456</div>
+                        <button class="copy-btn" id="copyBtn">Kopyala</button>
+                    </div>
+                    <p class="code-info">Bu kodu rezervasyon yaparken kullanabilirsiniz!</p>
+                </div>
+            </div>
         </div>
     </div>
     
