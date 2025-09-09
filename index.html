@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hediye Çarkı - Şanslı Çark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎁 Hediye Çarkı 🎁</h1>
+        <p>Çarkı çevir ve hediyeni kazan!</p>
+        
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <div class="wheel-section" data-prize="100 TL">100 TL</div>
+                <div class="wheel-section" data-prize="50 TL">50 TL</div>
+                <div class="wheel-section" data-prize="25 TL">25 TL</div>
+                <div class="wheel-section" data-prize="10 TL">10 TL</div>
+                <div class="wheel-section" data-prize="5 TL">5 TL</div>
+                <div class="wheel-section" data-prize="Tekrar Dene">Tekrar Dene</div>
+                <div class="wheel-section" data-prize="100 TL">100 TL</div>
+                <div class="wheel-section" data-prize="50 TL">50 TL</div>
+            </div>
+            <div class="wheel-center">
+                <div class="wheel-pointer"></div>
+            </div>
+        </div>
+        
+        <button class="spin-button" id="spinButton">ÇARKI ÇEVİR!</button>
+        
+        <div class="result" id="result"></div>
+        
+        <div class="prize-history">
+            <h3>Kazandığın Ödüller:</h3>
+            <ul id="prizeList"></ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

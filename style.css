@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.wheel-section {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Her bölüm için farklı renkler */
+.wheel-section:nth-child(1) { background: #ff6b6b; transform: rotate(0deg); }
+.wheel-section:nth-child(2) { background: #4ecdc4; transform: rotate(45deg); }
+.wheel-section:nth-child(3) { background: #45b7d1; transform: rotate(90deg); }
+.wheel-section:nth-child(4) { background: #96ceb4; transform: rotate(135deg); }
+.wheel-section:nth-child(5) { background: #feca57; transform: rotate(180deg); }
+.wheel-section:nth-child(6) { background: #ff9ff3; transform: rotate(225deg); }
+.wheel-section:nth-child(7) { background: #54a0ff; transform: rotate(270deg); }
+.wheel-section:nth-child(8) { background: #5f27cd; transform: rotate(315deg); }
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.wheel-pointer {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #ff4757;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.spin-button {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    margin-bottom: 20px;
+}
+
+.spin-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.spin-button:active {
+    transform: translateY(0);
+}
+
+.spin-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.result {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.prize-history {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.prize-history h3 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.prize-history ul {
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.prize-history li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.prize-history li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive tasarım */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .wheel-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .wheel-section {
+        font-size: 12px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}
